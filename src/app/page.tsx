@@ -168,6 +168,7 @@ export default function HomePage() {
             loop
             muted
             playsInline
+            preload="auto"
             className="w-full h-full object-cover object-center filter brightness-[0.88] contrast-[1.05]"
           />
         </div>
@@ -315,6 +316,7 @@ export default function HomePage() {
                   src={featuredProject.heroImage}
                   alt={featuredProject.title}
                   fill
+                  priority
                   className="object-cover"
                 />
               </motion.div>

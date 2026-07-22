@@ -370,27 +370,26 @@ export default function HomePage() {
       {/* SECTION 4 — SERVICES (Interactive List) */}
       <section className="relative py-40 bg-[#0D120F] min-h-screen flex items-center">
         {/* Floating background image tied to hover state */}
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-40 mix-blend-lighten transition-all duration-1000 ease-out">
+        <div className="absolute inset-0 z-0 pointer-events-none transition-opacity duration-200">
           <AnimatePresence mode="wait">
             {activeServiceHover && (
               <motion.div
                 key={activeServiceHover}
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.15 }}
                 className="absolute inset-0"
               >
                 <Image
                   src={GKV_SERVICES.find((s) => s.id === activeServiceHover)?.image || GKV_SERVICES[0].image}
                   alt="Service Preview"
                   fill
-                  className="object-cover object-center filter grayscale contrast-125 opacity-80"
+                  className="object-cover object-center filter grayscale contrast-125 opacity-30"
                 />
               </motion.div>
             )}
           </AnimatePresence>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0D120F] via-[#0D120F]/80 to-[#0D120F]" />
         </div>
 
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10 w-full">
